@@ -1,5 +1,6 @@
 module "elb_tfvars" {
-  source          = "../modules/elb"
+  source  = "app.terraform.io/devopsprasanth/devopsprasanth-elb/aws"
+  version = "1.0.0"
   env             = var.env
   nlbname         = "dev-nlb"
   subnets         = module.vpc_tfvars.public_subnets

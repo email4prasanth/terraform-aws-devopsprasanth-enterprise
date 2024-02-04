@@ -1,6 +1,7 @@
 variable "region" {}
-variable "vpc_name" {}
 variable "env" {}
+
+variable "vpc_name" {}
 variable "imagename" {}
 variable "instance_type" {}
 variable "key" {}

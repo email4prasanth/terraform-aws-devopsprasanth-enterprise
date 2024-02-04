@@ -1,5 +1,6 @@
 module "vpc_tfvars" {
-  source                     = "../modules/network"
+  source  = "app.terraform.io/devopsprasanth/devopsprasanth-network/aws"
+  version = "1.0.0"
   vpc_name                   = var.vpc_name
   cidr_block                 = var.cidr_block
   env                        = var.env
@@ -14,12 +15,14 @@ module "vpc_tfvars" {
 }
 
 module "sg_tfvars" {
-  source = "../modules/sg"
+  source  = "app.terraform.io/devopsprasanth/devopsprasanth-sg/aws"
+  version = "1.0.0"
   vpc_id = module.vpc_tfvars.vpc_id
 }
 
 module "nat_tfvars" {
-  source   = "../modules/nat"
+  source  = "app.terraform.io/devopsprasanth/devopsprasanth-nat/aws"
+  version = "1.0.0"
   vpc_name = var.vpc_name
   # vpc_id           = module.vpc_tfvars.vpc_id
   public_subnet_id = module.vpc_tfvars.public_subnet-natgw

@@ -1,5 +1,6 @@
 module "ec2_tfvars" {
-  source               = "../modules/compute"
+  source  = "app.terraform.io/devopsprasanth/devopsprasanth-compute/aws"
+  version = "1.0.0"
   env                  = var.env
   imagename            = var.imagename
   aws_region           = var.region

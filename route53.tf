@@ -1,5 +1,6 @@
 module "route53_tfvars" {
-  source     = "../modules/route53"
+  source  = "app.terraform.io/devopsprasanth/devopsprasanth-route53/aws"
+  version = "1.0.0"
   domainname = "techprasanth.xyz"
   nlb_id     = module.elb_tfvars.elb_id
   recordname = "devopsb27"
