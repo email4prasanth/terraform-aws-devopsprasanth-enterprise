@@ -4,9 +4,9 @@ module "vpc_tfvars" {
   vpc_name                   = var.vpc_name
   cidr_block                 = var.cidr_block
   env                        = var.env
-  public_subnet_cidr_blocks  = var.public_subnet_cidr_blocks
-  private_subnet_cidr_blocks = var.private_subnet_cidr_blocks
-  azs                        = var.azs
+  public_subnet_cidr_blocks  = ["10.95.0.0/24", "10.95.1.0/24"]
+  private_subnet_cidr_blocks = ["10.95.10.0/28", "10.95.20.0/28"]
+  azs                        = ["us-east-1a", "us-east-1b", "us-east-1c"]
   instance_type              = var.instance_type
   key                        = var.key
   region                     = var.region
